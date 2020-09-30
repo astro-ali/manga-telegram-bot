@@ -4,7 +4,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 from dataStructures import *
-from PIL import Image
+from PIL import Images
 
 def chooseManga():
 	# add feature : the ability to chooseManga function : to the user
