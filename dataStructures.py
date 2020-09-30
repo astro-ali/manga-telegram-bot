@@ -1,0 +1,70 @@
+# Project Path ---> Desktop\manga bot
+
+redable_manga_list = {
+	"1":"One Piece",
+	"2":"Attack on titan",
+	"3":"Naruto",
+	"4":"Detective Conan",
+	"5":"Akatsuki no Yona",
+	"6":"Nanatsu no taizai",
+	"7":"HUNTER X HUNTER",
+	"8":"On Punch Man",
+	"9":"Fairy Tail",
+	"10":"Kurosaki-kun no Iinari ni Nante",
+	"11":"KINGDOM",
+	"12":"Dragon Ball Super",
+	"13":"SKIP BEAT",
+	"14":"BLACK CLOVER",
+	"15":"The Promised Neverland",
+	"16":"Bokuno Hero Academia",
+	"17":"Bleach",
+	"18":"NOBLESSE",
+	"19":"Tales of Demons and Gods",
+	"20":"kaichou wa maid sama"
+}
+
+manga_list = {
+	"1":"1onepi-ece",
+	"2":"1shinge-kino-kyojin",
+	"3":"naruto",
+	"4":"1mer-itan-tei-con-an",
+	"5":"1akatsuk-inoy-ona",
+	"6":"1nanat-sunot-aizai",
+	"7":"hun-terxhun-ter",
+	"8":"1on-epunch-man",
+	"9":"fairy-tail",
+	"10":"1kuros-akikunn-oiin-ari-ninant-enara-nai",
+	"11":"king-dom",
+	"12":"1dragon-ball-super",
+	"13":"1sk-ipbe-at",
+	"14":"1bbla-ck-cl-over",
+	"15":"1theprom-isedneve-rland",
+	"16":"bokuno-hero-academia",
+	"17":"bleach",
+	"18":"nob-les-se",
+	"19":"tales-of-demons-and-gods",
+	"20":"1kaichou-wa-maid-sama"
+}
+
+manga_code={
+	"1onepi-ece":"14",
+	"1shinge-kino-kyojin":"848",
+	"naruto":"17",
+	"1mer-itan-tei-con-an":"581",
+	"1akatsuk-inoy-ona":"844",
+	"1nanat-sunot-aizai":"1611",
+	"hun-terxhun-ter":"24",
+	"1on-epunch-man":"943",
+	"fairy-tail":"40",
+	"1kuros-akikunn-oiin-ari-ninant-enara-nai":"1490",
+	"king-dom":"959",
+	"1dragon-ball-super":"1811",
+	"1sk-ipbe-at":"29",
+	"1bbla-ck-cl-over":"1757",
+	"1theprom-isedneve-rland":"2417",
+	"bokuno-hero-academia":"1636",
+	"bleach":"13",
+	"nob-les-se":"463",
+	"tales-of-demons-and-gods":"2072",
+	"1kaichou-wa-maid-sama":"64"
+}
