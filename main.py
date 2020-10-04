@@ -29,10 +29,8 @@ def main():
 	for url,path in img_links:
 		try:
 			download(working[2],url)
-		except:
+		except Exception as e:
 			failed_cases += 1
-			# try to delete the fialed cases in the 
-			# dwonload queue lsit
 			continue
 
 	print(f"\n[+] Failed Cases : [{failed_cases}]\n")

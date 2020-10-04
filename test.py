@@ -1,36 +1,13 @@
-from PIL import Image
-import os
-import img2pdf
+# Project Path ---> Desktop\manga bot
+from bs4 import BeautifulSoup
+import requests
+import re
 
+page_src = requests.get("https://manga.ae/1shinge-kino-kyojin/").text
+soup = BeautifulSoup(page_src, 'lxml')
+last_tag = soup.find_all('a', class_='chapter')[0].text
+chapter_number = re.findall(R'\d\d\d\d|\d\d\d|\d\d|\d',last_tag)
 
-os.chdir(R"C:\Users\Ali\Desktop\MyPython Project\Selenium\manga bot\1shinge-kino-kyojin_132")
+last_chapter = int(chapter_number[0])
 
-images = []
-
-for img in os.listdir():
-	if img.endswith('.JPG'):
-		images.append(img)
-
-for img in images:
-	print(img)
-print("---------------------------------")
-
-def contain_transparency(image):
-	img = Image.open(image,'r')
-	if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
-		return True
-	else:
-		return False
-
-def convert(name):
-	print("[+] Waiting To Convert...")
-	for img_name in images:
-		if contain_transparency(img_name):
-			images.remove(img_name)
-			os.remove(img_name)			
-	with open(name,'wb') as file:
-		file.write(img2pdf.convert(images))
-		file.close()
-	print("[+] Done ")
-
-convert('attack on titan.pdf')
+print(f"Available chapters:[1-{last_chapter}]")

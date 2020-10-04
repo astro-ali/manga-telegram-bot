@@ -2,9 +2,10 @@
 import img2pdf
 import requests
 import os
+import re
 from bs4 import BeautifulSoup
 from dataStructures import *
-from PIL import Images
+from PIL import Image
 
 def chooseManga():
 	# add feature : the ability to chooseManga function : to the user
@@ -15,8 +16,10 @@ def chooseManga():
 	print("------------------------------------")
 	print(" Pick the manga you want from the list above...\n")
 	manga_key = input("Manga number:")
-	chapter_number = input("Chapter number:")
 	manga_name = manga_list.get(manga_key)
+	last_chapter = numberOfChapters(manga_name)
+	print(f"Available chapters:[1-{last_chapter}]")
+	chapter_number = input("Chapter number:")
 	return [str("https://manga.ae/"+manga_name+'/'+chapter_number+'/0/full'),manga_code.get(manga_name),manga_name+'_'+chapter_number]
 
 download_queue=[] #it contains a dynamic names of the images
@@ -90,5 +93,10 @@ def contain_transparency(image):
 	else:
 		return False
 
-def numberOfChapters():
-	pass
+def numberOfChapters(mangaName):
+	page_src = requests.get("https://manga.ae/"+str(mangaName)+'/').text
+	soup = BeautifulSoup(page_src, 'lxml')
+	last_tag = soup.find_all('a', class_='chapter')[0].text
+	chapter_number = re.findall(R'(\d\d\d\d|\d\d\d|\d\d|\d)',last_tag)
+	last_chapter = int(chapter_number[0])
+	return last_chapter
